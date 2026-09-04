@@ -1,0 +1,22 @@
+[build-system]
+requires = ['setuptools==82.0.1']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = 'project_name'
+version = '0.0.1'
+
+dependencies = [
+    'content of requirements.txt'
+]
+dynamic = [
+  'version'
+]
+
+
+[tool.setuptools.packages.find]
+where = ['src']
+
+[tool.setuptools_scm]
+version_scheme = 'no-guess-dev'
+local_scheme = 'no-local-version'

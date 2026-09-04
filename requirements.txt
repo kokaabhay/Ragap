@@ -1,0 +1,27 @@
+sentence_transformers
+langchain-openai
+langchain
+ninja
+pytest
+numpy
+#python and installation libraries
+pep8
+uv
+poetry
+#fastapi required libraries
+fastapi
+fastapi[standard]
+pydantic
+#sql  based libraries
+sqlalchemy
+#authentication based libraries
+jwt
+#vectordb
+chromadb
+#pdfextraction tools
+pypdf
+pymupdf
+unstructured
+pdfplumber
+pymupdf4llm
+tesseract
