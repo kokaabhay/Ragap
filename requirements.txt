@@ -22,6 +22,10 @@ chromadb
 pypdf
 pymupdf
 unstructured
+unstructured[pdf]
+unstructured[all-docs]
 pdfplumber
 pymupdf4llm
 tesseract
+
+python-dotenv
