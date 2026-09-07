@@ -1,16 +1,16 @@
 from openai import OpenAI
-import os
+from config import Config
 import httpx
 import json
 import httpx2
-from dotenv import load_dotenv
-load_dotenv()
-key=os.getenv("LLM_API_KEY")
+key=Config.LLM_API_KEY
 http_client = httpx.Client(verify=False)
 import requests
 import json
-
-def llm_response():
+query=input("enter:")
+def llm_response(query:str):
+    if not query:
+        return "No question asked" 
     # First API call with reasoning
     response = requests.post(
         verify=False,
@@ -24,7 +24,7 @@ def llm_response():
         "messages": [
             {
             "role": "user",
-            "content": "Hi"
+            "content": query
             }
         ],
         "reasoning": {"enabled": False}
@@ -45,6 +45,8 @@ def llm_response():
     }
     ]
     l=response['content']
-    print(l)
+    
     return l
+
+print(llm_response(query))
 
