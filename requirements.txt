@@ -1,6 +1,7 @@
 sentence_transformers
 langchain-openai
 langchain
+langchain-unstructured
 ninja
 pytest
 numpy
