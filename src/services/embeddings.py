@@ -34,4 +34,4 @@ def embed(lot:list):
         return str(e)
     
     
-print(embed(chunking(filepath)))
+#print(len(embed(chunking(filepath))))

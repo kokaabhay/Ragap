@@ -1,6 +1,6 @@
 from unstructured.partition.auto import partition
 from unstructured.chunking.title import chunk_by_title
-
+from unstructured.chunking.basic import chunk_elements
 
 
 filepath="C://Users//AbhayKoka//ragap//src//Policy_Documents//sample.pdf"
@@ -25,7 +25,7 @@ def docextract(filepath):
 #use chunk by title strategy
 def chunking(path=filepath):
     e=docextract(path)
-    chunks=chunk_by_title(e)
+    chunks=chunk_by_title(e,overlap=20)
     l=[]
     #print(type(chunks))
     for chunk in chunks:
