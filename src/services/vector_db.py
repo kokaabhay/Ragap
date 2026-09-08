@@ -1,9 +1,11 @@
 #https://docs.trychroma.com/docs/overview/getting-started
 import chromadb
 import uuid
-from query_input import input_query
+from src.services.extract_from_pdf import chunking,filepath
+#from src.services.query_input import input_query
+
+
 chroma_client = chromadb.PersistentClient(path="./Policy_data")
-from extract_from_pdf import chunking,filepath
 #from embeddings import embed
 def retrieval(q):
     # switch \`create_collection\` to \`get_or_create_collection\` to avoid creating a new collection every time

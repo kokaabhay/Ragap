@@ -1,5 +1,5 @@
 from openai import OpenAI
-from config import Config
+from src.services.config import Config
 import httpx
 import json
 import httpx2
@@ -7,17 +7,18 @@ key=Config.LLM_API_KEY
 http_client = httpx.Client(verify=False)
 import requests
 import json
-from query_input import input_query
-query=input_query()
-from vector_db import retrieval
+from src.services.query_input import input_query
+from src.services.vector_db import retrieval
+
+
 def llm_response(query:str):    
-    if not query:
-        return "No question asked" 
     # First API call with reasoning
     try:
         system_prompt="You are a customer facing support agent,"\
-                " and you have to answer customer question according to the retrieved context."\
-                " Dont make up any non existing info and answer the customer strictly based on the document"
+                    "Be polite and give in a human readable format" \
+                    " and you have to answer customer question according to the retrieved context."\
+                    " Dont make up any non existing info and answer the customer strictly based on the document"\
+                    "If the answer is not available in the context, say I don't know"
         response = requests.post(
             verify=False,
         url="https://openrouter.ai/api/v1/chat/completions",
@@ -60,5 +61,5 @@ def llm_response(query:str):
         print("LLM calling may have Failed")        
         return str(e.args)
 
-print(llm_response(query))
+#print(llm_response(query))
 

@@ -1,8 +1,8 @@
 import requests
 import json
-from config import Config
+from src.services.config import Config
 key=Config.LLM_API_KEY
-from extract_from_pdf import chunking,filepath
+from src.services.extract_from_pdf import chunking,filepath
 from openai import OpenAI
 lot=chunking(filepath)
 def embed(lot:list):
