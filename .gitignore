@@ -1,4 +1,6 @@
 .venv
 \venv
 .env
-\Policy_data
+\src\services\Policy_data
+*\__pycache_
+\src\services\__pycache__
